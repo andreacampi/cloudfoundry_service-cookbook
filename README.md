@@ -137,8 +137,8 @@ consequence, installing different services to unrelated directories is not suppo
 - `reference`: a reference to a commit (the SHA1 or a branch name) to deploy. Defaults to `node['cloudfoundry_service']['reference']`;
 - `enable_submodules`: if true, any submodules for the repository will by updated as well. This must be true when using the default repository; only change if you know what you are doing. Defaults to `true`;
 - `depth`: if not nil, it will limit the depth of the git checkout to the given value; this may speed up the deployment. Defaults to `10`;
-- `ruby_version`: the version of Ruby that will be used to run Bundler. Defaults to `node['cloudfoundry']['ruby_1_9_2_version']`;
-- `ruby_path`: the path to a Ruby interpreter that will be used to run Bundler. Defaults to the `rbenv` installation of Ruby version `node['cloudfoundry']['ruby_1_9_2_version']`.
+- `ruby_version`: the version of Ruby that will be used to run Bundler. Defaults to `node['cloudfoundry']['ruby_version']`;
+- `ruby_path`: the path to a Ruby interpreter that will be used to run Bundler. Defaults to the `rbenv` installation of Ruby version `node['cloudfoundry']['ruby_version']`.
 
 Usage
 =====

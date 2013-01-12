@@ -10,6 +10,8 @@ version          "1.2.1"
   supports os
 end
 
-%w{ cloudfoundry logrotate rbenv }.each do |cb|
+%w{ logrotate rbenv }.each do |cb|
   depends cb
 end
+
+depends "cloudfoundry", "~> 1.3.0"

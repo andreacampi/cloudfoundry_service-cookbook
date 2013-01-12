@@ -36,7 +36,7 @@ def initialize(name, run_context=nil)
   new_resource.subdirectory(new_resource.service_name) unless new_resource.subdirectory
 
   # internal
-  new_resource.ruby_version(node['cloudfoundry']['ruby_1_9_2_version']) unless new_resource.ruby_version
+  new_resource.ruby_version(node['cloudfoundry']['ruby_version']) unless new_resource.ruby_version
   new_resource.ruby_path(ruby_bin_path(new_resource.ruby_version)) unless new_resource.ruby_path
 
   service_resource = service new_resource.init_service_name do

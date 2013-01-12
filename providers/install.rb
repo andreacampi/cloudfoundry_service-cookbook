@@ -29,7 +29,7 @@ def initialize(name, run_context=nil)
   new_resource.group(node['cloudfoundry']['group']) unless new_resource.group
   new_resource.repository(node['cloudfoundry_service']['repo']) unless new_resource.repository
   new_resource.reference(node['cloudfoundry_service']['reference']) unless new_resource.reference
-  new_resource.ruby_version(node['cloudfoundry']['ruby_1_9_2_version']) unless new_resource.ruby_version
+  new_resource.ruby_version(node['cloudfoundry']['ruby_version']) unless new_resource.ruby_version
   new_resource.ruby_path(ruby_bin_path(new_resource.ruby_version))
 end
 
