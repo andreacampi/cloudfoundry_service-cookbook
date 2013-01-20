@@ -54,6 +54,7 @@ def create_target_directory
 
   d = directory new_resource.base_path do
     user new_resource.user
+    group new_resource.group
     recursive true
     action :nothing
   end
