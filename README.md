@@ -1,7 +1,7 @@
 Description
 ===========
 
-basic functionality for writing cookbooks that manage services in a
+Basic functionality for writing cookbooks that manage services in a
 [Cloud Foundry](http://www.cloudfoundry.org) installation.
 
 Unless you are creating or modifying a cookbook, there is nothing interesting
