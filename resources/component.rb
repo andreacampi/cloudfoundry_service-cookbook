@@ -21,7 +21,7 @@ actions :create, :enable, :restart, :start
 default_action :create
 
 attribute :name, :kind_of => String, :name_attribute => true
-attribute :service_name, :kind_of => [String, NilClass], :required => true
+attribute :service_name, :kind_of => [String, NilClass], :default => nil
 attribute :install, :kind_of => [TrueClass, FalseClass, NilClass], :default => true
 attribute :config_dir, :kind_of => [String, NilClass], :default => nil
 attribute :data_dir, :kind_of => [String, NilClass], :default => nil
