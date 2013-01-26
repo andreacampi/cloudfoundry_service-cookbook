@@ -2,10 +2,8 @@ Description
 ===========
 
 Basic functionality for writing cookbooks that manage services in a
-[Cloud Foundry](http://www.cloudfoundry.org) installation.
-
-Unless you are creating or modifying a cookbook, there is nothing interesting
-in here.
+[Cloud Foundry](http://www.cloudfoundry.org) installation. This cookbook also
+installs a few management tools that work with all the services.
 
 Requirements
 ============
@@ -35,6 +33,9 @@ resources, as well as by the actual services cookbooks.
 
 The following attributes are user-configurable:
 
+default
+-------
+
 * `node['cloudfoundry_service']['install_path']` - The directory where sources
   for each service will be installed. Defaults to `/srv/cloudfoundry/services`.
 * `node['cloudfoundry_service']['repo']` - The URL to a git repository
@@ -51,6 +52,17 @@ The following attributes are user-configurable:
   services to store locks. Defaults to `/var/vcap/sys`.
 * `node['cloudfoundry_service']['ruby_version']` - Version of ruby to use by
   default for running services. Defaults to `1.9.3-p362`.
+
+tools
+-----
+
+* `node['cloudfoundry_service']['tools']['install_path']` - The directory where
+  sources for the service tools will be installed. Defaults to
+  `/srv/cloudfoundry/services/tools`.
+* `node['cloudfoundry_service']['tools']['ruby_version']` - Version of ruby to
+  use for running service tools. Defaults to `1.9.3-p362`.
+* `node['cloudfoundry_service']['tools']['install']` - A list of service tools
+  that should be installed. Defaults to `['backup/manager']`.
 
 Resources/Providers
 ===================
@@ -143,6 +155,9 @@ consequence, installing different services to unrelated directories is not suppo
 Usage
 =====
 
+Install service tools:
+
+    run_list: "recipe[cloudfoundry_service::tools]"
 
 License and Author
 ==================
